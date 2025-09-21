@@ -1,0 +1,179 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #9b59b6; /* A nice purple */
+    --secondary-color: #8e44ad;
+    --background-color: #1a1a2e;
+    --text-color: #e0e0e0;
+    --container-bg: #2c2c54;
+    --border-color: #4a4a7a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --- Main Container --- */
+.container {
+    background-color: var(--container-bg);
+    border-radius: 15px;
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-color);
+    overflow: hidden; /* Important for screen transitions */
+}
+
+/* --- Screen Management --- */
+.screen {
+    display: none; /* Hide all screens by default */
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.screen.active {
+    display: block; /* Show only the active screen */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Typography --- */
+h1, h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* --- Buttons & Inputs --- */
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+    background-color: #1a1a2e;
+    color: var(--text-color);
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* --- Progress Bar --- */
+.progress-bar {
+    background-color: #1a1a2e;
+    border-radius: 10px;
+    height: 10px;
+    width: 100%;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.progress {
+    background-color: var(--primary-color);
+    height: 100%;
+    width: 0%; /* Initially no progress */
+    border-radius: 10px;
+    transition: width 0.4s ease-in-out;
+}
+
+/* --- Result Screen --- */
+#cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.card {
+    background-color: #1a1a2e;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    padding: 15px;
+    width: 150px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card h3 {
+    color: var(--primary-color);
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+.card h4 {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 0.8em;
+    color: #b0b0d0;
+    margin-bottom: 0;
+}
+
+#reading {
+    margin-top: 20px;
+    text-align: left;
+    white-space: pre-wrap; /* Preserves formatting from the LLM response */
+    background-color: #1a1a2e;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+#summary p {
+    margin-bottom: 5px;
+}

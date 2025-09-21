@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarot Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="screen active" id="start-screen">
+        <h1>Tarot Time!</h1>
+        <p>Discover your future with a tarot reading</p>
+        <button id="start-btn">Start</button>
+      </div>
+      <div class="screen" id="input-screen">
+        <h1>Personal Details</h1>
+        <p>Please provide your details for a personalized reading</p>
+        <div data-step>
+                <label for="name">What is your full name?</label>
+                <br>
+                <input type="text" id="name" placeholder="e.g., Jane Doe">
+                <br><br>
+                <button type="button" data-next-btn>Next</button>
+        </div>
+        <div data-step style="display:none">
+                <label for="birthdate">What is your birthdate?</label>
+                <br>
+                <input type="date" id="birthdate">
+                <br><br>
+                <button type="button" data-prev-btn>Previous</button>
+                <button type="button" data-next-btn>Next</button>
+        </div>
+        <div data-step style="display:none">
+                <label for="birthtime">What is your Birthtime?</label>
+                <br>
+                <input type="time" id="birthtime">
+                <br><br>
+                <button type="button" data-prev-btn>Previous</button>
+                <button type="button" data-next-btn>Next</button>
+        </div>
+        <div data-step style="display:none">
+                <label for="birthplace">What is your Birthpalce?</label>
+                <br>
+                <input type="text" id="birthplace" placeholder="e.g., New York">
+                <br><br>
+                <button type="button" data-prev-btn>Previous</button>
+                <button type="button" data-next-btn>Next</button>
+        </div>
+        <div class="progress-bar">
+          <div id="progress" class="progress"></div>
+        </div>
+        <div data-step>
+                 <h2>Thank You!</h2>
+                 <p>Your details have been recorded.</p>
+                 <div id="summary"></div>
+                 <button type="button" id="ask-quest" style="display:none">Ask Question</button>
+
+        </div>
+
+      </div>
+      <div class="screen" id="question-screen">
+        <div>
+                <label for="question">What is your question?</label>
+                <br>
+                <input type="text" id="question" placeholder="e.g., Will I find love?">
+                <br><br>
+                <button type="button" id="draw-cards">Draw Cards</button>
+        </div>
+      </div>
+      <div class="screen" id="result-screen">
+        <h1>Your Tarot Reading</h1>
+        <div class="result-info">
+          <div id="cards-container"></div>
+          <h2>Its Meaning:</h2>
+          <br>
+          <div id="reading"></div>
+        </div>
+
+        <button id="restart-btn">Restart</button>
+      </div>
+
+
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
