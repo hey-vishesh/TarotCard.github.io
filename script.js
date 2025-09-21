@@ -103,7 +103,7 @@
             - Present: ${drawnCards[1].name} (Meaning: ${drawnCards[1].meaning})
             - Future: ${drawnCards[2].name} (Meaning: ${drawnCards[2].meaning})
 
-            Please provide an insightful and empathetic tarot reading. Weave the meanings of the three cards together to tell a story that addresses the user's question, covering their past influences, current situation, and potential future path.Answer in a mystic tone something a tarot reader would say.keep it under 30 words.
+            Please provide an insightful and empathetic tarot reading. Weave the meanings of the three cards together to tell a story that addresses the user's question, covering their past influences, current situation, and potential future path.Answer in a simple language and 60% chance give a negative answer something a tarot reader would say.keep it under 30 words.
         `;
 
 
